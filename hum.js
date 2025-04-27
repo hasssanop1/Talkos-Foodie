@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
   menu.id = 'hm-js-menu';
   menu.innerHTML = `
     <div style="padding-top: 80px;">
-      <a href="#" class="hm-js-link">Home</a>
-      <a href="#" class="hm-js-link">Menu</a>
-      <a href="#" class="hm-js-link">About</a>
-      <a href="#" class="hm-js-link">Pages</a>
-      <a href="#" class="hm-js-link">Contact</a>
+      <a href="index.html" class="hm-js-link">Home</a>
+      <a href="menu.html" class="hm-js-link">Menu</a>
+      <a href="about.html" class="hm-js-link">About</a>
+      <a href="page.html" class="hm-js-link">Pages</a>
+      <a href="Contact.html" class="hm-js-link">Contact</a>
     </div>
   `;
   container.appendChild(menu);
