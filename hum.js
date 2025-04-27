@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
       bars[1].style.opacity = '0';
       bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
 
+      // Change bars to X icon
+      button.classList.add('open');  // Add a class to indicate the "X" state
+
       links.forEach((link, i) => {
         setTimeout(() => {
           link.style.opacity = '1';
@@ -26,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
       bars[0].style.transform = 'rotate(0) translate(0, 0)';
       bars[1].style.opacity = '1';
       bars[2].style.transform = 'rotate(0) translate(0, 0)';
+
+      // Change "X" icon back to hamburger bars
+      button.classList.remove('open');  // Remove the "open" class
 
       links.forEach(link => {
         link.style.opacity = '0';
@@ -42,4 +48,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
