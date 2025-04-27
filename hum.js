@@ -207,52 +207,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-// Wait for the page to load
-document.addEventListener('DOMContentLoaded', function() {
-  // Create the hamburger button
-  const button = document.createElement('button');
-  button.id = 'hamburger-button';
-  button.style.position = 'fixed';
-  button.style.top = '20px';
-  button.style.left = '20px';
-  button.style.width = '40px';
-  button.style.height = '30px';
-  button.style.background = 'transparent';
-  button.style.border = 'none';
-  button.style.cursor = 'pointer';
-  button.style.zIndex = '999999';
 
-  // Create three bars
-  const bar1 = document.createElement('div');
-  const bar2 = document.createElement('div');
-  const bar3 = document.createElement('div');
-
-  [bar1, bar2, bar3].forEach(bar => {
-    bar.style.width = '100%';
-    bar.style.height = '4px';
-    bar.style.backgroundColor = 'gray';
-    bar.style.margin = '6px 0';
-    bar.style.transition = 'all 0.4s ease';
-    button.appendChild(bar);
-  });
-
-  document.body.appendChild(button);
-
-  let menuOpen = false;
-
-  button.addEventListener('click', function() {
-    if (!menuOpen) {
-      // Animate to X
-      bar1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-      bar2.style.opacity = '0';
-      bar3.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-      // Animate back to Hamburger
-      bar1.style.transform = 'rotate(0) translate(0, 0)';
-      bar2.style.opacity = '1';
-      bar3.style.transform = 'rotate(0) translate(0, 0)';
-    }
-    menuOpen = !menuOpen;
-  });
-});
 
