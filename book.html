@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Talkos Foodie</title>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+     <!-- nav -->
+     <header>
+        <nav class="navbar">
+          <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+          <div class="logo">Talkos Foodie</div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="page.html">Pages</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+          <a href="book.html"><button class="book-btn">Book A Table</button></a>
+        </nav>
+      </header>
+      
+
+    <section class="sec1">
+    <div class="reservation-container">
+        <h1 class="reservation-title">Make a Reservation</h1>
+        <p class="reservation-description">Please fill out the form below to reserve your spot. We look forward to serving you!</p>
+        <form class="reservation-form">
+            <input type="text" class="form-input" name="name" placeholder="Enter your name" required>
+            <input type="tel" class="form-input" name="phone" placeholder="Enter your phone number" required>
+            <input type="date" class="form-input" name="date" required>
+            <input type="time" class="form-input" name="time" required>
+            <select class="form-select" name="persons" required>
+                <option value="" disabled selected>Number of persons</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5 or more</option>
+            </select>
+            <button type="submit" class="form-button">Reserve</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
+<link rel="stylesheet" href="book.css">

@@ -1,0 +1,879 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Reset */
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    position: sticky;
+}
+
+
+
+body {  
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/* Top Strip */
+.nav-strip {
+    width: 100vw;
+    height: 3rem;
+    /* Increased height for social media icons */
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons img {
+    height: 2rem;
+    /* Icons size */
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2vw;
+    position: sticky;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    /* More curved hover effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #E5E9D9;
+    transform: scale(1.1);
+}
+
+.book-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border: 0.125rem solid black;
+    border-radius: 0.9375rem;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #FFB6C1;
+    /* Light pink hover color */
+    color: black;
+    transform: scale(1.1) rotate(-2deg);
+    /* Subtle tilt effect */
+}
+
+.book-btn:active {
+    background-color: red;
+    color: white;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Contact us */
+.contact-container {
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    animation: fadeIn 1s ease-out;
+    width: 50%;
+    margin: 100px auto 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3vw;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-description {
+    font-size: 1.2vw;
+    color: #555;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: zoomIn 1.2s ease-in-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-input, .form-textarea, .form-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:hover, .form-textarea:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #AD343E;
+    box-shadow: 0 0 10px #AD343E;
+}
+
+.form-button {
+    background: #AD343E;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(173, 52, 62, 0.4);
+}
+
+.form-button:active {
+    transform: scale(0.98);
+}
+
+.placeholder-animation .form-input::placeholder,
+.placeholder-animation .form-textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.form-input:focus::placeholder, .form-textarea:focus::placeholder {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+/* navbar */
+
+
+/* Navbar */
+/* .navbar */
+
+/* Hamburger Icon Styles */
+.hamburger-icon {
+    display: none;
+    /* Hidden by default */
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger-icon {
+        display: block;
+        /* Show hamburger icon on small screens */
+    }
+  
+    .nav-links {
+        display: none;
+        /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 1rem 0;
+    }
+  
+    .nav-links.active {
+        display: flex;
+        /* Show nav links when active class is added */
+    }
+  
+    .book-btn {
+        margin-left: auto;
+        /* Push button to the right */
+        margin-right: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+        /* Reduce logo size for very small screens */
+    }
+  
+    .book-btn {
+        font-size: 0.875rem;
+        /* Reduce button font size */
+        padding: 0.5rem 1rem;
+        /* Adjust button padding */
+    }
+  
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: black;
+        font-family: 'Pacifico', cursive;
+    }
+  
+  }
+  
+  
+  
+  
+  @media (max-width: 826px) {
+    .logo {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: black;
+        font-family: 'Pacifico', cursive;
+        margin-left: -39vw;
+    }
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        margin-left: -28vw;
+    }
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        margin-left: 0vw;
+    }
+  }
+  
+  @media (max-width: 706px) {
+    .logo {
+        margin-left: -41vw;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .book-btn {
+        font-size: 0.75rem;
+        padding: 0.6rem 1.5rem;
+        border: 0.125rem solid black;
+        border-radius: 0.9375rem;
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        margin-left: 0vw;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .logo {
+        margin-left: 1vw;
+        font-size: 1.75rem;
+  
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .logo {
+        margin-left: -43vw;
+    }
+  }
+  
+  
+  @media (max-width: 686px) {
+    .logo {
+        margin-left: -39vw;
+    }
+  }
+  
+  @media (max-width: 582px) {
+    .logo {
+        margin-left: -31vw;
+    }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 608px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 608px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 766px) {
+    .logo {
+        font-size: 3.5vw;
+        margin-left: -48vw;
+    }
+  }
+  
+  
+  
+  
+  @media (max-width: 404px) {
+  .logo{
+    font-size: 6vw;
+    margin-left: -14vw;
+  }
+  }
+  
+  @media (max-width: 606px){
+    .logo{
+        font-size: 4vw;
+        margin-left: -36vw;
+    }
+  }
+  
+  @media (max-width: 626px){
+    .logo{
+        font-size: 4.5vw;
+        margin-right: -15vw;
+    }
+  }
+  
+  @media (max-width: 464px){     
+  .logo{
+    font-size: 5.5vw;
+  }
+  }
+  
+  @media (max-width: 400px){ 
+  .logo{
+    margin-right: -21vw;
+  }
+  }
+  
+  @media (max-width: 340px){ 
+  .logo{
+    font-size: 6.25vw;
+    margin-left: -24vw;
+  }
+  }
+  
+  /* Navbar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Forms */
+  /* Mobile Responsive Styles */
+@media screen and (max-width: 985px) {
+    .contact-container {
+      width: 90%;
+      padding: 30px 20px;
+      margin: 50px auto;
+      border-radius: 20px;
+    }
+  
+    .contact-title {
+      font-size: 7vw;
+      margin-bottom: 15px;
+    }
+  
+    .contact-description {
+      font-size: 4vw;
+      margin-bottom: 25px;
+    }
+  
+    .contact-form {
+      gap: 15px;
+    }
+  
+    .form-input,
+    .form-textarea,
+    .form-button {
+      padding: 12px;
+      font-size: 4vw;
+      border-radius: 10px;
+    }
+  
+    .form-textarea {
+      min-height: 120px;
+    }
+  
+    .form-button {
+      padding: 14px;
+      font-size: 4.5vw;
+    }
+  }
+  
+  /* Tablet/Medium Device Adjustments */
+  @media screen and (min-width: 600px) and (max-width: 985px) {
+    .contact-container {
+      width: 70%;
+      padding: 40px 30px;
+    }
+  
+    .contact-title {
+      font-size: 5vw;
+    }
+  
+    .contact-description {
+      font-size: 2.5vw;
+    }
+  
+    .form-input,
+    .form-textarea,
+    .form-button {
+      font-size: 2.2vw;
+      padding: 14px;
+    }
+  
+    .form-button {
+      font-size: 2.5vw;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media screen and (max-width: 480px) {
+    .contact-container {
+      width: 95%;
+      padding: 25px 15px;
+      margin: 30px auto;
+      border-radius: 15px;
+    }
+  
+    .contact-title {
+      font-size: 8vw;
+    }
+  
+    .contact-description {
+      font-size: 4.5vw;
+    }
+  
+    .form-input,
+    .form-textarea,
+    .form-button {
+      font-size: 4.5vw;
+      padding: 10px;
+    }
+  
+    .form-button {
+      padding: 12px;
+    }
+  }
+  
+  /* Ensure form elements are always properly sized */
+  .contact-form {
+    max-width: 100%;
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-button {
+    box-sizing: border-box;
+  }
+  
+  /* Maintain hover effects where supported */
+  @media (hover: hover) {
+    .form-input:hover,
+    .form-textarea:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .form-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(173, 52, 62, 0.4);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* humberguer */
+  
+/* humburger */
+/* humburger */
+
+/* humburger bar */
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Hide everything by default on desktop */
+#hm-container {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  #hm-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: block;
+  }
+
+  #hm-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10001;
+    padding: 0;
+  }
+
+  .hm-bar {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #888; /* Gray bars */
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  #hm-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    transition: left 0.4s ease;
+    z-index: 9999;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  }
+
+  .hm-links {
+    padding-top: 80px;
+  }
+
+  .hm-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .hm-link:hover {
+    background: #444;
+  }
+}
+
+@media (max-width: 674px){
+.logo{
+  margin-left: 10vw;
+  margin-top: -1vw;
+  font-size: 4vw;
+}
+}
+
+@media (max-width: 767px){
+.logo{
+  
+  margin-left: 11vw;
+  font-size: 4vw;
+  margin-top: -1vw;
+}
+}
+
+@media (max-width: 767px){
+.logo{
+  margin-left: 15vw;
+  font-size: 5vw;
+}
+}
+
+@media (max-width: 767px){
+.logo{
+  font-size: 4vw;
+  margin-left: 12vw;
+}
+}
+
+@media (max-width: 519px){
+.logo{
+  font-size: 5vw;
+}
+}
+
+@media (max-width: 395px){
+.logo{
+  margin-left: 18vw;
+  font-size: 6vw;
+}
+}
+
+
+
+/* Humburger bar   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+
+@media (max-width: 1024px) {
+  .section-three-stats-grid {
+      justify-content: center;
+  }
+
+  .section-three-grid-box div {
+      font-size: 4vw; /* Bigger numbers */
+  }
+
+  .section-three-grid-box p {
+      font-size: 2.5vw; /* Bigger labels */
+  }
+}
+
+@media (max-width: 600px) {
+  .section-three-stats-grid {
+      justify-content: center;
+  }
+
+  .section-three-grid-box div {
+      font-size: 5vw;
+  }
+
+  .section-three-grid-box p {
+      font-size: 3.2vw;
+  }
+}
+@media (max-width: 630px){
+  .footer-social img {
+      width: 20vw;
+      height: 15vw;
+      transition: transform 0.3s ease;
+  }
+}
+
+@media (max-width: 1091px){
+.footer-social img {
+  width: 12vw;
+  height: 11vw;
+  transition: transform 0.3s ease;
+}
+}
+@media (max-width: 715px){
+.footer-social img {
+  width: 19vw;
+  height: 16vw;
+  transition: transform 0.3s ease;
+}
+}
+@media (max-width: 467px){
+.footer-social img {
+  width: 30vw;
+  height: 27vw;
+  transition: transform 0.3s ease;
+}
+}
+/* footer */

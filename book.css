@@ -1,0 +1,673 @@
+.reservation-container {
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    animation: fadeIn 1s ease-out;
+    width: 50%;
+    margin: 100px auto 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.reservation-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3vw;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.reservation-description {
+    font-size: 1.2vw;
+    color: #555;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: zoomIn 1.2s ease-in-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-input, .form-select, .form-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:hover, .form-select:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: #AD343E;
+    box-shadow: 0 0 10px #AD343E;
+}
+
+.form-button {
+    background: #AD343E;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(173, 52, 62, 0.4);
+}
+
+.form-button:active {
+    transform: scale(0.98);
+}
+
+.placeholder-animation .form-input::placeholder {
+    color: #999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.form-input:focus::placeholder {
+    opacity: 0;
+}
+/* nav css */
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Reset */
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    position: sticky;
+}
+
+
+
+body {  
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/* Top Strip */
+.nav-strip {
+    width: 100vw;
+    height: 3rem;
+    /* Increased height for social media icons */
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons img {
+    height: 2rem;
+    /* Icons size */
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2vw;
+    position: sticky;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    /* More curved hover effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #E5E9D9;
+    transform: scale(1.1);
+}
+
+.book-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border: 0.125rem solid black;
+    border-radius: 0.9375rem;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #FFB6C1;
+    /* Light pink hover color */
+    color: black;
+    transform: scale(1.1) rotate(-2deg);
+    /* Subtle tilt effect */
+}
+
+.book-btn:active {
+    background-color: red;
+    color: white;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* Navbar */
+/* navbar */
+
+
+/* Navbar */
+/* .navbar */
+
+/* Hamburger Icon Styles */
+.hamburger-icon {
+    display: none;
+    /* Hidden by default */
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger-icon {
+        display: block;
+        /* Show hamburger icon on small screens */
+    }
+  
+    .nav-links {
+        display: none;
+        /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 1rem 0;
+    }
+  
+    .nav-links.active {
+        display: flex;
+        /* Show nav links when active class is added */
+    }
+  
+    .book-btn {
+        margin-left: auto;
+        /* Push button to the right */
+        margin-right: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+        /* Reduce logo size for very small screens */
+    }
+  
+    .book-btn {
+        font-size: 0.875rem;
+        /* Reduce button font size */
+        padding: 0.5rem 1rem;
+        /* Adjust button padding */
+    }
+  
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: black;
+        font-family: 'Pacifico', cursive;
+    }
+  
+  }
+  
+  
+  
+  
+  @media (max-width: 826px) {
+    .logo {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: black;
+        font-family: 'Pacifico', cursive;
+        margin-left: -39vw;
+    }
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        margin-left: -28vw;
+    }
+  }
+  
+  @media (max-width: 826px) {
+    .logo {
+        margin-left: 0vw;
+    }
+  }
+  
+  @media (max-width: 706px) {
+    .logo {
+        margin-left: -41vw;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .book-btn {
+        font-size: 0.75rem;
+        padding: 0.6rem 1.5rem;
+        border: 0.125rem solid black;
+        border-radius: 0.9375rem;
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        margin-left: 0vw;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+  }
+  
+  @media (max-width: 792px) {
+    .logo {
+        margin-left: 1vw;
+        font-size: 1.75rem;
+  
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .logo {
+        margin-left: -43vw;
+    }
+  }
+  
+  
+  @media (max-width: 686px) {
+    .logo {
+        margin-left: -39vw;
+    }
+  }
+  
+  @media (max-width: 582px) {
+    .logo {
+        margin-left: -31vw;
+    }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 608px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 608px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 766px) {
+    .logo {
+        font-size: 3.5vw;
+        margin-left: -48vw;
+    }
+  }
+  
+  
+  
+  
+  @media (max-width: 404px) {
+  .logo{
+    font-size: 6vw;
+    margin-left: -14vw;
+  }
+  }
+  
+  @media (max-width: 606px){
+    .logo{
+        font-size: 4vw;
+        margin-left: -36vw;
+    }
+  }
+  
+  @media (max-width: 626px){
+    .logo{
+        font-size: 4.5vw;
+        margin-right: -15vw;
+    }
+  }
+  
+  @media (max-width: 464px){     
+  .logo{
+    font-size: 5.5vw;
+  }
+  }
+  
+  @media (max-width: 400px){ 
+  .logo{
+    margin-right: -21vw;
+  }
+  }
+  
+  @media (max-width: 340px){ 
+  .logo{
+    font-size: 6.25vw;
+    margin-left: -24vw;
+  }
+  }
+  
+  /* Navbar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .form-select */
+/* Mobile Responsive Styles */
+@media screen and (max-width: 985px) {
+    .reservation-container {
+      width: 90%;
+      padding: 30px 20px;
+      margin: 50px auto;
+      border-radius: 20px;
+    }
+  
+    .reservation-title {
+      font-size: 7vw;
+      margin-bottom: 15px;
+    }
+  
+    .reservation-description {
+      font-size: 4vw;
+      margin-bottom: 25px;
+    }
+  
+    .reservation-form {
+      gap: 15px;
+    }
+  
+    .form-input,
+    .form-select,
+    .form-button {
+      padding: 12px;
+      font-size: 4vw;
+      border-radius: 10px;
+    }
+  
+    .form-button {
+      padding: 14px;
+      font-size: 4.5vw;
+    }
+  
+    /* Nav strip adjustments */
+    .nav-strip {
+      height: 2.5rem;
+    }
+  
+    .social-icons img {
+      height: 1.5rem;
+      margin: 0 0.8rem;
+    }
+  }
+  
+  /* Tablet/Medium Device Adjustments */
+  @media screen and (min-width: 600px) and (max-width: 985px) {
+    .reservation-container {
+      width: 70%;
+      padding: 40px 30px;
+    }
+  
+    .reservation-title {
+      font-size: 5vw;
+    }
+  
+    .reservation-description {
+      font-size: 2.5vw;
+    }
+  
+    .form-input,
+    .form-select,
+    .form-button {
+      font-size: 2.2vw;
+      padding: 14px;
+    }
+  
+    .form-button {
+      font-size: 2.5vw;
+    }
+  
+    /* Nav strip adjustments */
+    .nav-strip {
+      height: 3rem;
+    }
+  
+    .social-icons img {
+      height: 2rem;
+      margin: 0 1rem;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media screen and (max-width: 480px) {
+    .reservation-container {
+      width: 95%;
+      padding: 25px 15px;
+      margin: 30px auto;
+      border-radius: 15px;
+    }
+  
+    .reservation-title {
+      font-size: 8vw;
+    }
+  
+    .reservation-description {
+      font-size: 4.5vw;
+    }
+  
+    .form-input,
+    .form-select,
+    .form-button {
+      font-size: 4.5vw;
+      padding: 10px;
+    }
+  
+    .form-button {
+      padding: 12px;
+    }
+  
+    /* Nav strip adjustments */
+    .nav-strip {
+      height: 2.2rem;
+    }
+  
+    .social-icons img {
+      height: 1.2rem;
+      margin: 0 0.5rem;
+    }
+  }
+  
+  /* Ensure form elements are always properly sized */
+  .reservation-form {
+    max-width: 100%;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-button {
+    box-sizing: border-box;
+  }
+  
+  /* Maintain hover effects where supported */
+  @media (hover: hover) {
+    .form-input:hover,
+    .form-select:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .form-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(173, 52, 62, 0.4);
+    }
+  
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Date and time inputs mobile optimization */
+  input[type="date"],
+  input[type="time"] {
+    min-height: 44px; /* Better touch target */
+  }
+  
+  /* Select dropdown styling */
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+  }
+
+
+
+
