@@ -53,17 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create button
   const button = document.createElement('button');
   button.id = 'hm-js-button';
-  button.innerHTML = `
+  button.innerHTML = 
     <div class="hm-js-bar" style="top: 0;"></div>
     <div class="hm-js-bar" style="top: 50%; transform: translateY(-50%);"></div>
     <div class="hm-js-bar" style="bottom: 0;"></div>
-  `;
+  ;
   container.appendChild(button);
 
   // Create menu
   const menu = document.createElement('div');
   menu.id = 'hm-js-menu';
-  menu.innerHTML = `
+  menu.innerHTML = 
     <div style="padding-top: 80px;">
       <a href="index.html" class="hm-js-link">Home</a>
       <a href="menu.html" class="hm-js-link">Menu</a>
@@ -71,11 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="page.html" class="hm-js-link">Pages</a>
       <a href="Contact.html" class="hm-js-link">Contact</a>
     </div>
-  `;
+  ;
   container.appendChild(menu);
 
   // Create and inject styles dynamically
-  const styles = `
+  const styles = 
     #hm-js-container {
       position: fixed;
       top: 0;
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pointer-events: auto;
       }
     }
-  `;
+  ;
 
   const styleTag = document.createElement('style');
   styleTag.textContent = styles;
@@ -201,4 +201,9 @@ document.addEventListener('DOMContentLoaded', function() {
     isOpen = !isOpen;
   });
 
-  
+  document.addEventListener('click', function(e) {
+    if (isOpen && !menu.contains(e.target) && e.target !== button && !button.contains(e.target)) {
+      button.click();
+    }
+  });
+});
