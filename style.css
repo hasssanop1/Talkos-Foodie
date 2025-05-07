@@ -2212,3 +2212,17 @@ body {
 }
 }
 /* footer */
+
+
+
+@media (max-width: 1700px)
+.hero {
+    background-image: url(/Assests/Mask group (6\) . png);
+    height: 47vw;
+    display: flex;
+    margin-top: 1.5vw;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4vw;
+    width: 238.8vh;
+}
