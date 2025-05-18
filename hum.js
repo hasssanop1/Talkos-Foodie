@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.hm-link');
   let isOpen = false;
 
-  // Dynamically set z-index of the hamburger button
-  button.style.zIndex = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';  // Ensure the hamburger button stays on top of everything
+  // Simplified z-index
+  button.style.zIndex = '1001';
+  menu.style.zIndex = '1000';
 
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent event from bubbling up
+    
     if (!isOpen) {
       menu.style.left = '0';
       bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Close when clicking outside
   document.addEventListener('click', function(e) {
-    if (isOpen && !menu.contains(e.target) && e.target !== button && !button.contains(e.target)) {
+    if (isOpen && !menu.contains(e.target) && e.target !== button) {
       button.click();
     }
   });
