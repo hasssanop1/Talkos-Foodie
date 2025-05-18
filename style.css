@@ -2229,6 +2229,35 @@ body {
 #hm-button {
     z-index: 1000; /* Reduced from extremely large value */
 }
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        z-index: 1; /* Lower than hamburger menu */
+    }
+    
+    #hm-container {
+        position: fixed;
+        z-index: 1000;
+    }
+}
+@media (max-width: 768px) {
+    #hm-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+    }
+    
+    #hm-menu {
+        position: fixed;
+        z-index: 1000;
+    }
+    
+    /* Hide regular navigation */
+    .nav-links, .book-btn {
+        display: none;
+    }
+}
 
 #hm-menu {
     z-index: 999; /* Just below the button */
