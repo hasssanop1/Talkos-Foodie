@@ -2242,14 +2242,14 @@ body {
 }
 @media (max-width: 768px) {
     #hm-button {
-        position: releative;
+        position: fixed;
         top: 20px;
         left: 20px;
         z-index: 1001;
     }
     
     #hm-menu {
-        position: releative;
+        position: fixed;
         z-index: 1000;
     }
     
