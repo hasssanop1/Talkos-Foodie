@@ -2253,10 +2253,6 @@ body {
         z-index: 1000;
     }
     
-    /* Hide regular navigation */
-    .nav-links, .book-btn {
-        display: none;
-    }
-}
+
 
 
