@@ -2242,14 +2242,14 @@ body {
 }
 @media (max-width: 768px) {
     #hm-button {
-        position: fixed;
+        position: releative;
         top: 20px;
         left: 20px;
         z-index: 1001;
     }
     
     #hm-menu {
-        position: fixed;
+        position: releative;
         z-index: 1000;
     }
     
@@ -2259,53 +2259,4 @@ body {
     }
 }
 
-/* --- Hamburger Menu Styles (within your responsive media query) --- */
-@media (max-width: 768px) {
-    /* Existing styles for .navbar and .nav-links might be here too */
 
-    #hm-container {
-        display: block; /* Make sure it's visible for the media query */
-        position: fixed; /* Use fixed positioning for it to stay on top while scrolling */
-        top: 1rem; /* Adjust as needed for spacing from the top */
-        right: 2vw; /* Adjust as needed for spacing from the right */
-        z-index: 1000; /* This is the key: put it on top of everything else */
-    }
-
-    #hm-button {
-        position: relative; /* Needed for z-index of its children bars */
-        z-index: 1001; /* Slightly higher than the container for the button bars */
-    }
-
-    #hm-menu {
-        position: fixed; /* Essential for it to appear over content */
-        top: 0; /* Align to the top of the viewport */
-        left: -250px; /* Hidden by default */
-        width: 250px; /* Width of the menu */
-        height: 100%; /* Full height of the viewport */
-        background-color: white; /* Or your desired background color */
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        transition: left 0.3s ease; /* Smooth slide-in/out */
-        z-index: 999; /* Lower than the button, but still high enough to cover page content */
-        overflow-y: auto; /* Enable scrolling if menu content exceeds height */
-    }
-
-    /* Ensure your nav-links are hidden if the hamburger is shown */
-    .nav-links {
-        display: none;
-    }
-
-    /* Hide the regular book button as well if you want it only in the hamburger menu */
-    .book-btn {
-        display: none;
-    }
-}
-
-/* Also, ensure that outside of the media query (for larger screens),
-   the hamburger elements are hidden if they shouldn't be visible. */
-@media (min-width: 769px) {
-    #hm-container,
-    #hm-button,
-    #hm-menu {
-        display: none;
-    }
-}
