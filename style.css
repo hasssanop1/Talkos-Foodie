@@ -2262,3 +2262,11 @@ body {
 #hm-menu {
     z-index: 999; /* Just below the button */
 }
+#hm-container {
+    position: relative; /* Ensure position is set for z-index to work */
+    z-index: 1000; /* A high value to ensure it's on top */
+}
+
+#hm-menu {
+    z-index: 999; /* Slightly lower than container but still high */
+}
